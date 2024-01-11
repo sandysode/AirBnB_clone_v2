@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 """ Console Module """
 import cmd
 import sys
@@ -121,11 +123,11 @@ class HBNBCommand(cmd.Cmd):
             arg_list = args.split(" ")
             kw = {}
             for arg in arg_list[1:]:
-                arg_splited = arg.split("=")
-                arg_splited[1] = eval(arg_splited[1])
-                if type(arg_splited[1]) is str:
-                    arg_splited[1] = arg_splited[1].replace("_", " ").replace('"', '\\"')
-                kw[arg_splited[0]] = arg_splited[1]
+                spd = arg.split("=")
+                spd[1] = eval(spd[1])
+                if type(spd[1]) is str:
+                    spd[1] = spd[1].replace("_", " ").replace('"', '\\"')
+                kw[spd[0]] = spd[1]
         except SyntaxError:
             print("** class name missing **")
         except NameError:
@@ -326,6 +328,6 @@ class HBNBCommand(cmd.Cmd):
         print("Updates an object with new information")
         print("Usage: update <className> <id> <attName> <attVal>\n")
 
+
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
-

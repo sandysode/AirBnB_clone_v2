@@ -3,7 +3,7 @@
 import os
 from fabric import Connection, task
 
-env = {"hosts": ["104.196.168.90", "35.196.46.172"]}
+env = {"hosts": ["34.232.69.124", "34.207.83.226"]}
 
 @task
 def do_clean(c, number=0):
